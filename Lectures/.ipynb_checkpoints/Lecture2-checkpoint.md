@@ -22,7 +22,7 @@ $$
 \sum_{i=1}^{n} e\_i^2, \quad \text{where } n \text{ is the number of experiments.} 
 $$
 
- >     - Since $s(t) = B_1 t +  B_2 \log(t)$, we can write this as a least squares problem:
+   \phantom{f} - Since $s(t) = B_1 t +  B_2 \log(t)$, we can write this as a least squares problem:
 
 $$
 \min_{B_1, B_2} (0.5 * \sum_{i=1}^{n} (B_1 t_i +  B_2 \log(t_i) - \hat{s}(t_i))^2
