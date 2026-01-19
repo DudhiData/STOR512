@@ -16,8 +16,12 @@
     - Through experiments we obtain the dataset where \[hat{s}\](t) represents an approximation of s(t) at given values of t
     - We now formulate the problem of estimating the parameters $B_1$ and $B_2$ as a linear least squares problem
     - The error is $e_i = s(t_i) - \hat{s}(t_i)$
-    - We minimize the sum of squared errors: $$ \sum_{i=1}^{n} e_i^2,
-    \quad \text{where } n \text{ is the number of experiments.}
-    $$
+    - We minimize the sum of squared errors:
+          $$ 
+          \sum_{i=1}^{n} e_i^2, \quad \text{where } n \text{ is the number of experiments.}
+          $$
     - Since $s(t) = B_1 t +  B_2 \log(t)$, we can write this as a least squares problem:
-$$ \sum_{i=1}^{n} e\_i^2, \quad \text{where } n \text{ is the number of experiments.} $$
+
+$$ 
+\sum_{i=1}^{n} e\_i^2, \quad \text{where } n \text{ is the number of experiments.} 
+$$
