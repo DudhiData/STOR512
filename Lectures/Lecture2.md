@@ -7,8 +7,8 @@
     - If f transforms its input from a multidimensional vector into a real number and is a multivariable function, then x* is a stationary point of f if the gradient of f at x* is 0
 
  - Motivating Example 1 (Compounding Interest Rate):
-    - A nonlinear function $P(t) = P_0 * e^Bt$ is commonly used to model a continuous interest process of an investment over time t, where $P_0$ denotes the initial investment and B is a given interest rate
-    - The parameters $P_0$ and B are unknown and we are given approximate observations of \[hat{s}(t_i)\] at several time points
+    - A nonlinear function $P(t) = P_0 * e^{Bt}$ is commonly used to model a continuous interest process of an investment over time t, where $P_0$ denotes the initial investment and B is a given interest rate
+    - The parameters $P_0$ and B are unknown and we are given approximate observations of $\hat{s}(t_i)$ at several time points
     - We use the dataset to estimate the unknown parameters
 
  - Motivating Example 2 (Curvature Fitting):
@@ -16,13 +16,8 @@
     - Through experiments we obtain the dataset where \[hat{s}\](t) represents an approximation of s(t) at given values of t
     - We now formulate the problem of estimating the parameters $B_1$ and $B_2$ as a linear least squares problem
     - The error is $e_i = s(t_i) - \hat{s}(t_i)$
-    - We minimize the sum of squared errors:
-          \[
-    \sum_{i=1}^{n} e_i^2,
+    - We minimize the sum of squared errors: $$ \sum_{i=1}^{n} e_i^2,
     \quad \text{where } n \text{ is the number of experiments.}
-    \]
+    $$
     - Since $s(t) = B_1 t +  B_2 \log(t)$, we can write this as a least squares problem:
-        \[
-\sum_{i=1}^{n} e_i^2,
-\quad \text{where } n \text{ is the number of experiments.}
-\]
+$$ \sum_{i=1}^{n} e\_i^2, \quad \text{where } n \text{ is the number of experiments.} $$
