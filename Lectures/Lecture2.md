@@ -46,8 +46,8 @@ $$
       - Assuming the underlying model is linear and given by $s(t) = B_1 t + B_2 log(t) + e$, where e is a Gaussian noise with 0 mean and variance $o^2$
       - From this model, we have $e = s(t) - B_1 t - B_2 log(t)$, which is a Gaussian random variable
          - Our observed data provides i.i.d. samples of e, given by $e_i = \hat{s_i} - B_1 t_i - B_2 log(t_i)$
-         - The joint probability density of ($e_1$,...,$e_{n}$) can thus be derived using the multiplied probabilities derived from the PDF of the normal distribution and our estimators
-            - We maximimize the log of this joint density formula with respect to $B_1$ and $B_2$, which eventually boils down the exact least-squares problem derived earlier
+         - The joint probability density of $(e_1, \dots, e_n)$ can thus be derived using the multiplied probabilities derived from the PDF of the normal distribution and our estimators
+            - We maximize the log of this joint density formula with respect to $B_1$ and $B_2$, which eventually boils down the exact least-squares problem derived earlier
           
  - Example 3: Markowitz' Portfolio Selection
     - Assume that we have d assets over a given investment period. Let $x_i$ denote the amount of capital invested in asset i, measured in dollars at the price at the beginning of the period
@@ -95,7 +95,7 @@ $$
         - The distance between these two parallel hyperplanes is $2/(\lVert w \rVert)_2$,
         - Maximizing the margin is equivalent to minimizing the Euclidean norm of w, or minimizing $\((\lVert w \rVert)^2\)_2$
         - We can formulate this SVM model into the optimization problem:
-            - $min_(w \exists R^d)$ $0.5 \((\lVert w \rVert)^2\)_2$ subject to $y_i (w^T x^{i} + b) >= 1$ which is a convex quadratic problem
+            - $min_{w \exists R^d}$ $0.5 \((\lVert w \rVert)^2\)_2$ subject to $y_i (w^T x^{i} + b) >= 1$ which is a convex quadratic problem
 
  - Example 4: Handwritten Digit Recognition Example
      - We are given a collection of handwritten digit images taken from ZIP codes on US postal envelopes

@@ -32,7 +32,7 @@ $$
    - Then we can change our above problem to:
 
 $$
-\min_{B \exists R^2} (0.5 * (\lVert XB - y \rVert)^2 = 0.5 * \sum_{i=1}^{n} (X_i^T B - y_i)^2)
+\min_{B \exists R^2} (0.5 * (\lVert XB - y \rVert)^2) = 0.5 * \sum_{i=1}^{n} (X_i^T B - y_i)^2)
 $$
 
    - We can solve this and obtain a unique solution:
@@ -46,8 +46,8 @@ $$
       - Assuming the underlying model is linear and given by $s(t) = B_1 t + B_2 log(t) + e$, where e is a Gaussian noise with 0 mean and variance $o^2$
       - From this model, we have $e = s(t) - B_1 t - B_2 log(t)$, which is a Gaussian random variable
          - Our observed data provides i.i.d. samples of e, given by $e_i = \hat{s_i} - B_1 t_i - B_2 log(t_i)$
-         - The joint probability density of ($e_1$,...,$e_n$) can thus be derived using the multiplied probabilities derived from the PDF of the normal distribution and our estimators
-            - We maximimize the log of this joint density formula with respect to $B_1$ and $B_2$, which eventually boils down the exact least-squares problem derived earlier
+         - The joint probability density of $(e_1, \dots, e_n)$ can thus be derived using the multiplied probabilities derived from the PDF of the normal distribution and our estimators
+            - We maximize the log of this joint density formula with respect to $B_1$ and $B_2$, which eventually boils down the exact least-squares problem derived earlier
           
  - Example 3: Markowitz' Portfolio Selection
     - Assume that we have d assets over a given investment period. Let $x_i$ denote the amount of capital invested in asset i, measured in dollars at the price at the beginning of the period
@@ -57,7 +57,7 @@ $$
         - The optimization variable is the portfolio vector x
         - The constraints include a total investment budget B, $\sum_{i=1}^{n} x_i = B$ and nonnegativity constraints
         - Since asset prices are uncertain, the vector p is modeled as a random vector with known mean m and a covariance matrix A
-        - With a fixed portfolio x, the return r is therefore a random scalar variable with mean $m^T x$ and variance $x^T Ax
+        - With a fixed portfolio x, the return r is therefore a random scalar variable with mean $m^T x$ and variance $x^T Ax$
     - The classical selection model seeks to minimize the return variance while satisfying the budget constraint, a minimum expected return requirement, and upper bounds on individual asset holdings
     - This is a constrained convex quadratic program
 
@@ -73,13 +73,13 @@ $$
        - Note that the RHS -1 and 1 can be replaced by an values -c and c respectively
        - However, since we can scale the coefficients by dividing them by c to recover the RHS -1 and 1, we choose c = 1 without loss of generality
        - To strictly separate the data points, we aim to maximize the width of this band, which is exactly the difference between the two hyperplanes $H_-$ and $H_+$
-       - The distance from a given point a $\exists R^2$ to a plane $H_+$: $w_1 x_1 + w_2 x_2 + b = 1$ is $|w_1 a_1 + w_2 a_2 + b - 1| / ((w_1)^2 + (w_2)^2)^{1/2}$
+       - The distance from a given point $a \exists R^2$ to a plane $H_+$: $w_1 x_1 + w_2 x_2 + b = 1$ is $|w_1 a_1 + w_2 a_2 + b - 1| / ((w_1)^2 + (w_2)^2)^{1/2}$
        - If a lies on $H_-$, then this distance equals the distance between the two planes
        - Our goal is to maximize this distance: max $2/((w_1)^2 + (w_2)^2)^{1/2}$, or min $0.5((w_1)^2 + (w_2)^2)$
        - The constraints are $w_1 (x_1)^{i} + w_2 (x_2)^{i} + b <= -1$ for negative labels and >= 1 for positive labels
        - Hence our final model can be simplified to:
 
-$min_(w_1, w_2 \exists R)$:
+$min_{w_1, w_2 \exists R}$:
 
 $$
 0.5 ((w_1)^2 + (w_2)^2) \text{ subject to } y_i (w_1 (x_1)^{i} + w_2 (x_2)^{i} + b) >= 1
@@ -89,13 +89,13 @@ $$
 
  - Generalization to Multi-Dimensional Settings:
     - We are given a set of data points $\({(x^{i}, y_i)}_{i=1}\)^{m}$, where x $\exists R^d$ and the label $y_i \exists$ {-1,1}
-    - Assume that we draw {$x^i$} in the {$R^d$} space and want to find a hyperplane H: $w^T x + b = 0$  that separates all the points associated with a label $y_i$ = 1 into one half-space and the others into another half-space, and w $\exists R^d$ is its normal vector, and b $\exists R$ is an intercept
+    - Assume that we draw $x^i$ in the $R^d$ space and want to find a hyperplane H: $w^T x + b = 0$  that separates all the points associated with a label $y_i$ = 1 into one half-space and the others into another half-space, and w $\exists R^d$ is its normal vector, and b $\exists R$ is an intercept
     - Problem Formulation:
         - We assume there exist 2 hyperplanes $w^T x + b = 1$ and $w^T x + b = -1$, which are parallel to the separating hyperplane H and separate the dataset into 2 half-spaces
-        - The distance between these two parallel hyperplanes is $2/(\lVert w \rVert)_2,
+        - The distance between these two parallel hyperplanes is $2/(\lVert w \rVert)_2$,
         - Maximizing the margin is equivalent to minimizing the Euclidean norm of w, or minimizing $\((\lVert w \rVert)^2\)_2$
         - We can formulate this SVM model into the optimization problem:
-            - $min_(w \exists R^d)$ $0.5 \((\lVert w \rVert)^2\)_2$ subject to $y_i (w^T x^{i} + b) >= 1$ which is a convex quadratic problem
+            - $min_{w \exists R^d}$ $0.5 \((\lVert w \rVert)^2\)_2$ subject to $y_i (w^T x^{i} + b) >= 1$ which is a convex quadratic problem
 
  - Example 4: Handwritten Digit Recognition Example
      - We are given a collection of handwritten digit images taken from ZIP codes on US postal envelopes
