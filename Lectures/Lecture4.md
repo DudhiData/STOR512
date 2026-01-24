@@ -13,11 +13,11 @@
     - To estimate the coefficient vector B, we minimize the sum of squared errors, E is the squared Euclidean norm of the noise vector
     - Our problem becomes:
       
-        $$
-        \min_{B \exists R^{d+1}} {L(B) = \frac{1}{2} \sum_{i=1}^{n} (y_i - (x_i)^T B)^2 = \frac{1}{2} \lVert XB - y \rVert^2_2}
-        $$
-      
-    - This is the linear least-squares problem, minimizing a sum of squared residuals (the 1/2 is for mathematical convenience canceling out the 2 when taking the derivative)
+$$
+\min_{B \exists R^{d+1}} {L(B) = \frac{1}{2} \sum_{i=1}^{n} (y_i - (x_i)^T B)^2 = \frac{1}{2} \lVert XB - y \rVert^2_2}
+$$
+  
+   - This is the linear least-squares problem, minimizing a sum of squared residuals (the 1/2 is for mathematical convenience canceling out the 2 when taking the derivative)
 
 - Sparse Vectors:
     - Vector is said to be sparse if the number of its nonzero entries is much smaller than the number of zero entries
