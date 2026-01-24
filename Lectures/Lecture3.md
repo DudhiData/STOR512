@@ -10,7 +10,7 @@
         - Sample size
     - Key Takeaway:
         - Good optimization != Good generalization
-        - 
+
 - Overfitting in Machine Learning:
     - Occurs when a model is too complex and fits noise rather than true data-generating process
     - Achieves very low training error but poor test performance
@@ -42,13 +42,13 @@
     - The learning objective is to minimize the empirical loss over a prescribed hypothesis set F
     - Leading to the following optimization problem:
 
-    $$
-    \min_{B \exists F} {L(B; {x_i, y_i}):= \frac{1}{n} \sum_{i=1}^{n} l(U(x_i;B), y_i)}
-    $$
+$$
+\min_{B \exists F} {L(B; {x_i, y_i}):= \frac{1}{n} \sum_{i=1}^{n} l(U(x_i;B), y_i)}
+$$
   
-    - Without further structure on the model U and the loss function l, this problem is challenging
-    - So we must specify appropriate models and loss functions
-    - The training sample size n also plays a huge role, affecting generalization performance and choice of optimization algorithm
+   - Without further structure on the model U and the loss function l, this problem is challenging
+   - So we must specify appropriate models and loss functions
+   - The training sample size n also plays a huge role, affecting generalization performance and choice of optimization algorithm
 
 - ML and Optimization:
     - Primary goal: Generalization
@@ -62,19 +62,20 @@
         -  Assume that our model is linear as U(x:B) = $B_0 + \sum_{i=1}^{n} B_j x_{ij}$ and our loss is just a squared loss, $l(s,t) = \frac{1}{2} (s-t)^2$
         -  Then we can write our optimization problem as:
       
-        $$
-        \min_{B \exists R^{d+1}} \frac{1}{2n} \sum_{i=1}^{n} (B_0 + \sum_{j=1}^{d} x_{ij} B_j - y_i)^2     
-        $$
+$$
+\min_{B \exists R^{d+1}} \frac{1}{2n} \sum_{i=1}^{n} (B_0 + \sum_{j=1}^{d} x_{ij} B_j - y_i)^2     
+$$
     
-        - This is exactly a linear regression problem
+   - This is exactly a linear regression problem
   
-    - Example 5:
-        - If we replace least-squares loss by a logistic loss $l_2(s,t) = log(1+exp(s)) - ts$, then we obtain:
+   - Example 5:
+     - If we replace least-squares loss by a logistic loss $l_2(s,t) = log(1+exp(s)) - ts$, then we obtain:
           
-          $$
-          \min_{B \exists R^{d+1}} \frac{1}{n} \sum_{i=1}^{n} [log(1 + exp(B_0 + \sum_{j=1}^{d} x_{ij} B_j)) - y_i(B_0 + \sum_{j=1}^{d} x_{ij} B_j)]
-          $$
-        - Which is a logistic regression problem in binary classification
+$$
+\min_{B \exists R^{d+1}} \frac{1}{n} \sum_{i=1}^{n} [log(1 + exp(B_0 + \sum_{j=1}^{d} x_{ij} B_j)) - y_i(B_0 + \sum_{j=1}^{d} x_{ij} B_j)]
+$$
+
+   - Which is a logistic regression problem in binary classification
 
 - Solving Optimization Problems in Practice:
     - Exact solutions to optimization problems are rare in practice
