@@ -19,7 +19,7 @@
     - We minimize the sum of squared errors:
       
 $$ 
-\sum_{i=1}^{n} e\_i^2, \quad \text{where } n \text{ is the number of experiments.} 
+\sum_{i=1}^{n} e_i^2, \quad \text{where } n \text{ is the number of experiments.} 
 $$
 
    - Since $s(t) = B_1 t +  B_2 \log(t)$, we can write this as a least squares problem:

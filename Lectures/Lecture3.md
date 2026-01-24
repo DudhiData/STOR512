@@ -36,7 +36,7 @@
     - We describe a unified optimization template for supervised learning:
         - Given a finite set of training examples: {($x_i$, $y_i$)} from i = 1 to n, where $x_i$ is a feature vector and $y_i$ is a response or label
         - Our goal is to learn a prediction function that maps feature vectors to outcomes
-    - To model this, we often parameterize the learner as a function U(x; B) where B denotes model parameters (e.g. linear models take the form U(x; B) = $x_T$ B
+    - To model this, we often parameterize the learner as a function U(x; B) where B denotes model parameters (e.g. linear models take the form U(x; B) = $x^T$ B
     - Let l be a loss function that measures discrepancy between predicted outcome $\hat{y}_i = U(x_i ;B$  and the true outcome $y_i$
     - The empirical/average loss over the training set is defined as L(B; {$x_i$ , $y_i$}) := $\frac{1}{n} \sum_{i=1}^{n} l(U(x_i ;B), y_i)$
     - The learning objective is to minimize the empirical loss over a prescribed hypothesis set F
