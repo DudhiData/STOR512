@@ -16,6 +16,7 @@
         $$
         \min_{B \exists R^{d+1}} {L(B) = \frac{1}{2} \sum_{i=1}^{n} (y_i - (x_i)^T B)^2 = \frac{1}{2} \lVert XB - y \rVert^2_2}
         $$
+      
     - This is the linear least-squares problem, minimizing a sum of squared residuals (the 1/2 is for mathematical convenience canceling out the 2 when taking the derivative)
 
 - Sparse Vectors:
@@ -40,10 +41,10 @@
     - Consider a simple linear regression example with n = 3 data points and d = 1 input variable
     - In this case, the model is $y_i = B_0 + B_1 x_{i1} + e_i$, and the objective function becomes:
 
-        $$
-      L(B) = \frac{1}{2} [(B_0 + B_1 x_{11} - y_1)^2 + (B_0 + B_1 x_{21} - y_2)^2 + (B_0 + B_1 x_{31} - y_3)^2]
-        $$
-  
+$$
+L(B) = \frac{1}{2} [(B_0 + B_1 x_{11} - y_1)^2 + (B_0 + B_1 x_{21} - y_2)^2 + (B_0 + B_1 x_{31} - y_3)^2]
+$$
+
    - To compute the minimizer of L with respect to $\beta$, we apply Fermat's rule by setting the partial derivatives with respect to $\beta_1$ and $\beta_1$ equal to 0
    - This can be summarized into a system of two linear equations with the two unknowns $\beta_1$ and $\beta_1$ can be written compactly as the normal equations $X^T X \beta = X^T y$
        - Where design matrix X has a column of 1's and a column of the $x_{i1}$ and the response vector y is just $y_i$
