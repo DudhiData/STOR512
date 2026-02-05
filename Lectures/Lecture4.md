@@ -19,6 +19,8 @@ $$
   
    - This is the linear least-squares problem, minimizing a sum of squared residuals (the 1/2 is for mathematical convenience canceling out the 2 when taking the derivative)
 
+   - $L$ is convex <=> the Hessian of $L$ is positive semidefinite
+
 - Sparse Vectors:
     - Vector is said to be sparse if the number of its nonzero entries is much smaller than the number of zero entries
 
