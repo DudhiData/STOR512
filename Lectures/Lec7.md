@@ -32,7 +32,7 @@ $$
     -   We need to verify that $L(\beta_*) \leq L(\beta) \quad \forall \beta \exists \mathbb{R}^p$
  
 - Gauss-Newton Method Initialization:
-    - Start from initial point $\beta_0$, at each iteration $t \leq 0$ we approximate the objective locally by linearizing the residual function $F$ around $\beta_t$
+    - Start from initial point $\beta_0$, at each iteration $t \geq 0$ we approximate the objective locally by linearizing the residual function $F$ around $\beta_t$
     - A Newton-type linearization of the gradient:
         - $\nabla^2L(\beta_t)(\beta - \beta_t) + \nabla L(\beta_t) = 0$
         - Where $\nabla^2L$ is the Hessian of L
